@@ -1,0 +1,87 @@
+
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+    <title>Wlisteria Store - Product List</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+    />
+    <link rel="stylesheet" href="oke.css" />
+  </head>
+  <body>
+    <div class="container">
+      <header class="header">
+        <h1 class="header-title">Product Price List</h1>
+        <p class="header-description">Klik love untuk memesan</p>
+        <input
+          type="text"
+          id="searchInput"
+          class="search-bar"
+          placeholder="Search for products..."
+        />
+      </header>
+
+      <!-- Price List -->
+      <div class="price-list">
+        <!-- ITEM 001 -->
+        <div class="price-card">
+          <div class="icon">
+            <a href="https://t.me/ewneng">
+              <i class="fa-solid fa-heart"></i>
+            </a>
+          </div>
+          <h3 class="product-name">001</h3>
+          <p class="product-description">───┄‣ Manips Selca</p>
+          <p class="product-price">⟜ 4.000 </p>
+        </div>
+
+        <!-- ITEM 002 -->
+        <div class="price-card">
+          <div class="icon">
+            <a href="https://t.me/ewneng">
+              <i class="fa-solid fa-heart"></i>
+            </a>
+          </div>
+          <h3 class="product-name">002</h3>
+          <p class="product-description">───┄‣ Manips Half Body</p>
+          <p class="product-price">⟜ 6.000</p>
+        </div>
+
+       
+
+    <script>
+      // Get search input and price cards
+      const searchInput = document.getElementById("searchInput");
+      const priceCards = document.querySelectorAll(".price-card");
+
+      // Function to handle search
+      searchInput.addEventListener("input", function () {
+        const query = searchInput.value.toLowerCase(); // Get the query
+        priceCards.forEach((card) => {
+          const productName = card
+            .querySelector(".product-name")
+            .textContent.toLowerCase(); // Get product name
+          if (productName.includes(query)) {
+            card.style.display = "block";
+          } else {
+            card.style.display = "none";
+          }
+        });
+      });
+    </script>
+  </body>
+</html>
